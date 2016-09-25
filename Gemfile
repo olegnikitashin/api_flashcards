@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 # development dependencies will be added by default to the :development group.
 gemspec
 
+gem 'pg'
+
 group :test do
   gem "rspec-rails"
   gem "factory_girl_rails"
