@@ -6,6 +6,7 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'pg'
+# gem 'rack-attack'
 
 group :test do
   gem "rspec-rails"
