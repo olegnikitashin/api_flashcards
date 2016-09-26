@@ -10,5 +10,12 @@ module ApiFlashcards
         expect(response.status).to eq 200
       end
     end
+
+    describe "POST cards#create" do
+      it "returns a successful 200 response" do
+        post :create, format: :json
+        expect(response.status).to eq 200
+      end
+    end
   end
 end

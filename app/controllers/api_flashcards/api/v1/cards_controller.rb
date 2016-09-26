@@ -3,9 +3,13 @@ module ApiFlashcards
     class CardsController < ApiFlashcards::ApplicationController
 
       def index
-        render json: 'Success', status: 200
+        @cards = current_user.cards.all.order('review_date')
+        render json: @cards, status: 200
       end
 
+      def create
+        render json: 'Success', status: 200
+      end
     end
   end
 end

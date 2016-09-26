@@ -3,8 +3,8 @@ ApiFlashcards::Engine.routes.draw do
 
   scope module: 'api' do
     namespace :v1 do
-      get :cards, to: 'cards#index'
-      # resources :cards
+      get  :cards, to: 'cards#index'
+      post :cards, to: 'cards#create'
     end
   end
 end
