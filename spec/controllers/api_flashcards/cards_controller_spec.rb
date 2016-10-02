@@ -2,8 +2,8 @@ require 'rails_helper'
 require "json_matchers/rspec"
 require 'support/auth/auth_helper.rb'
 
-def card_object(user_p)
-  block = user_p.cards.first.block.id
+def card_object(user)
+  block = user.cards.first.block.id
   { original_text: "banana", translated_text: "банан", block_id: block }
 end
 
@@ -45,18 +45,19 @@ module ApiFlashcards
       end
 
       describe "GET cards#index" do
-        it "returns a 200 status" do
+        before (:each) do
           get :index
+        end
+
+        it "returns a 200 status" do
           expect(response.status).to eq 200
         end
 
         it "returns a valid card object" do
-          get :index
           expect(response).to match_response_schema('cards')
         end
 
         it "responds to ajax by default" do
-          get :index
           expect(response.content_type).to eq 'application/json'
         end
       end
@@ -65,7 +66,8 @@ module ApiFlashcards
         context "invalid parameters passed" do
           it "returns a 400 status" do
             card = card_object(user)
-            card[:original_text] = ''
+            wrong = { original_text: '' }
+            card = card.merge(wrong)
             post :create, params: { 'card' => card }
             expect(response.status).to eq 400
           end
