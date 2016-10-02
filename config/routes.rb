@@ -1,5 +1,4 @@
 ApiFlashcards::Engine.routes.draw do
-  # apipie
   root to: 'api/v1/cards#index'
 
   scope module: 'api' do
