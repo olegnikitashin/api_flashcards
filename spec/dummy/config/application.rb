@@ -1,6 +1,7 @@
 require_relative 'boot'
 
 require 'rails/all'
+require 'apipie-rails'
 
 Bundler.require(*Rails.groups)
 require "api_flashcards"
@@ -12,4 +13,3 @@ module Dummy
     # -- all .rb files in that directory are automatically loaded.
   end
 end
-

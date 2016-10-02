@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "required": ["card"],
+  "properties": {
+    "card": {
+      "type": "object",
+      "items": {
+        "required": ["original_text", "translated_text", "review_date", "id"],
+        "properties": {
+          "original_text": { "type": "text"},
+          "translated_text": { "type": "text"},
+          "review_date": { "type": "datetime"},
+          "id": { "type": "integer" }
+        }
+      }
+    }
+  }
+}
