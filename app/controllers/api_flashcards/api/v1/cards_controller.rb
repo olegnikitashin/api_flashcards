@@ -1,7 +1,7 @@
 module ApiFlashcards
   module Api::V1
     class CardsController < ApiFlashcards::ApplicationController
-      
+
       api :GET, '/v1/cards', 'Returns all user cards'
       def index
         @cards = current_user.cards.all.order('review_date')
@@ -24,6 +24,7 @@ module ApiFlashcards
         params.require(:card).permit(:original_text, :translated_text,
                                      :block_id)
       end
+
     end
   end
 end
