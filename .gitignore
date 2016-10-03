@@ -5,3 +5,4 @@ spec/dummy/log/
 spec/dummy/tmp/
 .byebug_history
 spec/dummy/log/test.log
+spec/dummy/log/development.log
