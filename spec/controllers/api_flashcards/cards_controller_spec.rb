@@ -26,8 +26,7 @@ module ApiFlashcards
         context "invalid parameters passed" do
           it "returns a 401 status" do
             card = card_object(user)
-            wrong = { original_text: '' }
-            card = card.merge(wrong)
+            card = card.merge({ original_text: '' })
             post :create, params: { 'card' => card }
             expect(response.status).to eq 401
           end
@@ -67,8 +66,7 @@ module ApiFlashcards
         context "invalid parameters passed" do
           it "returns a 400 status" do
             card = card_object(user)
-            wrong = { original_text: '' }
-            card = card.merge(wrong)
+            card = card.merge({ original_text: '' })
             post :create, params: { 'card' => card }
             expect(response.status).to eq 400
           end
