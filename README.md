@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/olegnikitashin/api_flashcards.svg?branch=master)](https://travis-ci.org/olegnikitashin/api_flashcards)
+
 # ApiFlashcards
 Short description and motivation.
 

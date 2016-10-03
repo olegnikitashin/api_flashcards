@@ -15,8 +15,19 @@ Gem::Specification.new do |s|
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails", "~> 5.0.0", ">= 5.0.0.1"
+  s.add_dependency "active_model_serializers"
+  s.add_dependency 'apipie-rails'
 
-  s.add_development_dependency "sqlite3"
+
+  s.add_development_dependency "pg"
+  s.add_development_dependency "rspec-rails"
+  s.add_development_dependency "rspec"
+  s.add_development_dependency "bcrypt"
+  s.add_development_dependency "capybara"
+  s.add_development_dependency "factory_girl_rails"
+  s.add_development_dependency "json_matchers"
+  s.add_development_dependency "levenshtein"
 end
